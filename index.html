@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ethiopian Entrance Exam Practice</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container" id="authContainer">
+            <h2>Sign In</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+            </form>
+            
+        </div>
+
+        <div class="exam-setup-container" id="examSetupContainer" style="display: none;">
+            <h2>Exam Setup</h2>
+            <form id="examSetupForm">
+                <div class="form-group">
+                    <label>Stream</label>
+                    <select id="streamSelect" required>
+                        <option value="">Select Stream</option>
+                        <option value="Natural Science">Natural Science</option>
+                        <option value="Social Science">Social Science</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Year</label>
+                    <select id="yearSelect" required>
+                        <option value="">Select Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select id="subjectSelect" required>
+                        <option value="">Select Subject</option>
+                    </select>
+                </div>
+
+                <button type="submit">Start Exam</button>
+            </form>
+        </div>
+
+        <div class="exam-container" id="examContainer">
+            <div class="timer" id="timer">Time remaining: 180:00</div>
+            
+            <div class="exam-layout">
+                <div class="left-panel">
+                    <div class="exam-info" id="examInfoDisplay"></div>
+                    <div class="question-progress" id="questionProgress"></div>
+                </div>
+                
+                <div class="right-panel">
+                    <div class="question-container" id="questionContainer"></div>
+                    <div class="nav-buttons">
+                        <button onclick="previousQuestion()">Previous</button>
+                        <button onclick="nextQuestion()">Next</button>
+                        <button onclick="submitExam()" class="submit-btn">Submit Exam</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-container" id="resultContainer">
+            <h2>Exam Results</h2>
+            <p id="scoreDisplay"></p>
+            <button onclick="startNewExam()">Take Another Exam</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
